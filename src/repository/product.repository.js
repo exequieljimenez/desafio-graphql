@@ -7,20 +7,20 @@ class ProductRepository {
         return await this.dao.getProducts();
     };
 
-    async getProductById({id}) {
-        return await this.dao.getProductById(id);
+    async getProductById({productId}) {
+        return await this.dao.getProductById(productId);
     }
 
     async addProduct({product}) {
         return await this.dao.addProduct(product);
     }
 
-    async deleteProduct({id}) {
-        return await this.dao.deleteProduct(id);
+    async deleteProduct({productId}) {
+        return await this.dao.deleteProduct(productId);
     }
 
-    async updateProduct({id, product}) {
-        return await this.dao.updateProduct(id, product)
+    async updateProduct({productId, product}) {
+        return await this.dao.updateProduct(productId, product)
     }
 }
 

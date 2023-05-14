@@ -4,7 +4,8 @@ import { rootGraphqlService } from "../repository/index.js";
 
 const schemaGraphql = buildSchema(`
     type Product {
-        _id: String,
+        _id: String
+        productId: Int,
         nombre: String,
         precio: Int,
         imagen: String
@@ -18,13 +19,13 @@ const schemaGraphql = buildSchema(`
 
     type Query {
         getProducts: [Product]
-        getProductById(id: String): Product
+        getProductById(productId: Int): Product
     }
 
     type Mutation {
         addProduct(product: ProductInput): Product
-        deleteProduct(id:String): String
-        updateProduct(id: String, product: ProductInput): Product
+        deleteProduct(productId: Int): String
+        updateProduct(productId: Int, product: ProductInput): String
     }
 `);
 
